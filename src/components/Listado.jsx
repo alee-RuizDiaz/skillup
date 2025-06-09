@@ -5,9 +5,10 @@ import {useNavigate, Link} from 'react-router-dom'
 const Listado = () => {
 
   const navigate = useNavigate();
-  const token = localStorage.getItem('token');
+  let token = null
 
   useEffect(() => {
+    token = localStorage.getItem('token');
     if (token === null) {
       navigate('/');
     }
